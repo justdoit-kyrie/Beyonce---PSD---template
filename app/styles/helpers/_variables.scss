@@ -1,0 +1,37 @@
+// Color
+$primary-color: #f67102;
+$primary-color-lighter: #f4a91e;
+$secondary-color: #051441;
+$gray: #5d677e;
+$gray-dark: #101d48;
+$gray-light: #79899d;
+$gray-blur: #949CB7;
+$background-icon: #f4f7ff;
+$background-features: #e2e7fb;
+$border-color: #e7e7e7;
+$purple: #5a73e5;
+$purple-blur: #AFACCD;
+$purple-light: #E4ECFF;
+$yellow: #FFEBCE;
+$background-footer: #052347;
+$blue: #049EFF;
+
+// Font
+$primary-font: "Poppins", sans-serif;
+
+// Structure
+$wrapper: 1440px;
+$container: 1120px;
+
+// Reponsive
+:root {
+  --padding-bottom: 14rem;
+
+  @media screen and (max-width: 1279px) {
+    --padding-bottom: 7rem;
+  }
+
+  @media screen and (max-width: 767px) {
+    --padding-bottom: 4rem;
+  }
+}

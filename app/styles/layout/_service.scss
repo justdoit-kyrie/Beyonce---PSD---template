@@ -1,0 +1,114 @@
+.service {
+  padding: var(--padding-bottom) 0 0;
+
+  &-main {
+    padding: 0 3rem;
+    .global-block {
+      max-width: 62rem;
+      margin: 0 auto;
+
+      text-align: center;
+    }
+  }
+
+  &-list {
+    margin-top: 7.3rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0 3.3rem;
+  }
+
+  &-item {
+    width: calc(calc(100% / 3) - 2.2rem);
+    padding: 4rem 4.5rem 8.7rem;
+
+    background: #fff;
+
+    border: 2px solid $border-color;
+    border-radius: 13px;
+
+    &-icon-wrapper {
+      margin: 0 auto;
+      padding: 1.7rem;
+
+      background: $background-icon;
+      width: 6.7rem;
+      height: 6.7rem;
+
+      border-radius: 100rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      transition: background 0.2s linear;
+    }
+
+    &-icon {
+      color: $purple;
+      font-size: 2.5rem;
+
+      transition: color 0.2s linear;
+    }
+
+    &-content {
+      margin-top: 2.6rem;
+      max-width: 24.5rem;
+
+      text-align: center;
+    }
+
+    &-title {
+      font-size: 2.1rem;
+      line-height: lineHeight(31.5, 21);
+      font-weight: 600;
+      text-transform: capitalize;
+
+      margin-bottom: 2rem;
+      color: $gray-dark;
+    }
+
+    &-desc {
+      font-size: 1.4rem;
+      line-height: lineHeight(21, 14);
+      color: $gray-light;
+    }
+
+    &:hover &-icon-wrapper {
+      background: $purple;
+    }
+
+    &:hover &-icon {
+      color: #fff;
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-list {
+      display: grid;
+      grid-auto-columns: 80%;
+      grid-auto-flow: column;
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+      overflow: auto;
+
+      @include hideScroll();
+    }
+
+    &-item {
+      width: 100%;
+      scroll-snap-align: start;
+
+      &-content {
+        max-width: unset;
+      }
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-item {
+      padding: 4rem 2.5rem 6rem;
+    }
+  }
+}

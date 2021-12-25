@@ -1,0 +1,192 @@
+.testmonial {
+  padding: var(--padding-bottom) 0 0;
+
+  &-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .global-block {
+      max-width: 40rem;
+    }
+  }
+
+  &-list {
+    position: relative;
+    padding-left: 3.6rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0 2rem;
+  }
+
+  &-item {
+    position: relative;
+    padding: 2.8rem 2rem 6.4rem;
+
+    background: #fff;
+    box-shadow: 0px 8px 55px rgba(155, 162, 173, 0.17);
+    border-radius: 10px;
+
+    @include flexBox(
+      (
+        flex-direction: column,
+        gap: 0.7rem 0,
+      )
+    );
+
+    &-avatar-wrapper {
+      width: 5rem;
+      height: 5rem;
+
+      border-radius: 100rem;
+      border: 4px solid $yellow;
+      overflow: hidden;
+    }
+
+    &-avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &-name {
+      font-size: 1.3rem;
+      line-height: lineHeight(11, 13);
+    }
+
+    &-position {
+      color: $gray-blur;
+      font-size: 0.7rem;
+      line-height: lineHeight(11, 7);
+    }
+
+    &-desc {
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: lineHeight(14, 10);
+
+      max-width: 18.8rem;
+
+      @include textClamp(3);
+    }
+  }
+
+  &-star,
+  &-comma {
+    position: absolute;
+    right: 2rem;
+  }
+
+  &-star {
+    @include flexBox(
+      (
+        align-items: center,
+        gap: 0 0.5rem,
+      )
+    );
+
+    span {
+      line-height: 0;
+    }
+
+    span:nth-child(2) {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: lineHeight(11, 10);
+    }
+  }
+
+  &-icon {
+    color: $primary-color;
+    font-size: 1rem;
+  }
+
+  &-comma {
+    bottom: 2rem;
+  }
+
+  &-item:nth-child(2) {
+    margin-top: 2rem;
+  }
+
+  &-bg {
+    position: absolute;
+    left: 0;
+  }
+
+  &-feedback {
+    margin: 2rem 0 3.4rem;
+
+    @include flexBox(
+      (
+        align-items: center,
+        gap: 0 1rem,
+      )
+    );
+
+    &-icon-wrapper {
+      background: $purple-light;
+      border-radius: 100rem;
+
+      width: 2rem;
+      height: 2rem;
+
+      @include flexBox(
+        (
+          justify-content: center,
+          align-items: center,
+        )
+      );
+    }
+
+    &-icon {
+      color: $purple;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    &-number {
+      font-size: 2.5rem;
+      font-weight: 600;
+      line-height: lineHeight(26, 25);
+      color: $primary-color;
+    }
+
+    &-text {
+      color: $gray-blur;
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-main {
+      display: block;
+    }
+
+    &-list {
+      @include flexBox(
+        (
+          justify-content: center,
+          align-items: center,
+          gap: 0 2rem,
+        )
+      );
+
+      margin-bottom: 5rem;
+    }
+
+    &-bg {
+      @include absoluteCenter(both);
+    }
+
+    .global-block {
+      max-width: 100%;
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-list {
+      padding-left: unset;
+    }
+  }
+}

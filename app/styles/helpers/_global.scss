@@ -1,0 +1,78 @@
+.btn {
+  line-height: lineHeight(19, 16);
+  font-weight: 500;
+  color: $primary-color;
+  text-transform: capitalize;
+
+  padding: 1.5rem 3.5rem;
+  border: none;
+
+  border-radius: 20px;
+  outline: none;
+
+  &--outlined {
+    border: 1px solid $border-color;
+    background: transparent;
+  }
+
+  &--primary {
+    line-height: lineHeight(24, 16);
+    color: #fff;
+
+    background: linear-gradient(
+      to right,
+      $primary-color,
+      $primary-color-lighter
+    );
+  }
+}
+
+// global
+.global {
+  &-block {
+    max-width: 49.6rem;
+
+    &-heading {
+      letter-spacing: 0.25rem;
+      font-size: 1.3rem;
+      line-height: lineHeight(19.5, 13);
+      color: $primary-color;
+      text-transform: uppercase;
+
+      margin-bottom: 1.8rem;
+      display: block;
+
+      &.semi-bold {
+        font-weight: 600;
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 5rem;
+      line-height: lineHeight(56, 50);
+      color: $secondary-color;
+
+      margin-bottom: 2.5rem;
+
+      &.medium {
+        font-size: 4rem;
+        line-height: lineHeight(50, 40);
+      }
+    }
+
+    &-desc {
+      line-height: lineHeight(26, 16);
+    }
+
+    @include maxWidth(767px) {
+      &-title {
+        font-size: 3rem;
+
+        &.medium {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}

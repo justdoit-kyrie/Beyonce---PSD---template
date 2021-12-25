@@ -1,0 +1,115 @@
+.footer {
+  background: $background-footer;
+  &-top {
+    padding: 9rem 0 6rem 1.5rem;
+
+    display: grid;
+    grid-template-columns: 23.5rem 1fr;
+    grid-gap: 0 21.3rem;
+
+    &-logo {
+      max-width: 50%;
+    }
+
+    &-main {
+      @include flexBox(
+        (
+          flex-direction: column,
+          gap: 2.5rem 0,
+        )
+      );
+    }
+
+    &-desc {
+      font-size: 1.4rem;
+      line-height: lineHeight(22, 14);
+      font-weight: 400;
+      color: $gray-blur;
+    }
+
+    &-socials {
+      @include flexBox(
+        (
+          align-items: center,
+          gap: 0 1.2rem,
+        )
+      );
+    }
+
+    &-social {
+      color: $blue;
+      font-size: 2rem;
+    }
+
+    &-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 0 7.3rem;
+    }
+
+    &-column {
+      @include flexBox(
+        (
+          gap: 1rem 0,
+          flex-direction: column,
+        )
+      );
+      &-item {
+        font-size: 1.3rem;
+        line-height: lineHeight(37, 13);
+        font-weight: 400;
+        color: $purple-blur;
+      }
+
+      &-heading {
+        font-size: 1.8rem;
+        line-height: lineHeight(35, 18);
+        color: #fff;
+      }
+    }
+  }
+
+  &-bottom {
+    padding: 3rem 0;
+    border-top: 1px solid #11317c;
+
+    &-text {
+      display: block;
+
+      text-align: center;
+      color: $purple-blur;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: lineHeight(21, 14);
+    }
+  }
+
+  @include maxWidth(1279px) {
+    &-top {
+      grid-gap: 0 15.3rem;
+    }
+  }
+
+  @include maxWidth(1013px) {
+    &-top {
+      display: block;
+      padding-top: 5rem;
+
+      &-info {
+        margin-top: 5rem;
+      }
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-top {
+      &-info {
+        display: block;
+      }
+
+      &-column:not(:last-child){
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

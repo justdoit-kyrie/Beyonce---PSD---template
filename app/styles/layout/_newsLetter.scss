@@ -1,0 +1,96 @@
+.newsLetter {
+  padding: 0 0 var(--padding-bottom);
+
+  &-main {
+    height: 38.2rem;
+    background: $background-features;
+    border-radius: 4rem;
+
+    @include flexBox(
+      (
+        align-items: center,
+        justify-content: center,
+      )
+    );
+  }
+
+  &-inner {
+    max-width: 80rem;
+
+    @include flexBox(
+      (
+        align-items: center,
+        gap: 0 2rem,
+      )
+    );
+  }
+
+  .global-block {
+    max-width: 40.4rem;
+    flex-shrink: 0;
+  }
+
+  &-form {
+    flex: 1;
+    position: relative;
+
+    &-input {
+      width: calc(80rem - 40.4rem);
+      padding: 1.5rem 15.1rem 1.5rem 2.1rem;
+
+      border-radius: 100rem;
+      border: none;
+      outline: none;
+    }
+
+    &-submit {
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      cursor: pointer;
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-main {
+      padding: 0 2rem;
+    }
+
+    &-inner {
+      max-width: 68rem;
+    }
+
+    .global-block {
+      max-width: 30.4rem;
+
+      &-title {
+        font-size: 4rem;
+      }
+    }
+
+    &-form {
+      &-input {
+        width: calc(68rem - 30.4rem - 2.4rem);
+      }
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-inner {
+      display: block;
+      max-width: 100%;
+    }
+
+    .global-block {
+      text-align: center;
+    }
+
+    &-form {
+      margin-top: 2rem;
+      &-input {
+        width: 100%;
+      }
+    }
+  }
+}

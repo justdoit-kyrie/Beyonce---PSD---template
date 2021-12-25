@@ -1,0 +1,16 @@
+mixin blockContent({heading= '', title= '',desc= '', titleClass= '', headingClass= ''})
+  .global-block
+    if heading
+      span.global-block-heading(class= headingClass)= heading
+    h1.global-block-title(class= titleClass)= title
+    p.global-block-desc= desc
+    if block
+      block
+
+mixin featuresItem({srcset= '', alt='', heading='', title='', desc='', titleClass='' , headingClass= '', className=''})
+  .features-item(class= className)
+    div
+      img(srcset= srcset, alt= alt).features-image
+    +blockContent({heading: heading, title: title, desc: desc, titleClass: titleClass, headingClass: headingClass})
+      .features-actions
+        a(href="#").btn.btn--primary get in touch

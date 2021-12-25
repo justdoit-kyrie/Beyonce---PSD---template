@@ -1,0 +1,71 @@
+.features {
+  padding: 7.6rem 0 12rem;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 0 3rem;
+
+    .global-block {
+      max-width: 50.2rem;
+    }
+
+    &.reverse {
+      flex-flow: row-reverse nowrap;
+    }
+  }
+
+  &-actions {
+    margin-top: 3.7rem;
+  }
+
+  &-image {
+    transform: scale(1.1) translateX(-6.6rem);
+  }
+
+  &-bottom {
+    background: $background-features;
+    padding: 11.7rem 0 8.9rem;
+
+    .features-image {
+      transform: none;
+    }
+  }
+
+  @include maxWidth(1439px) {
+    &-image {
+      transform: scale(1.1) translateX(-3rem);
+    }
+  }
+
+  @include maxWidth(1279px) {
+    &-image {
+      transform: none;
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-item {
+      display: block;
+
+      .global-block {
+        margin-top: 4rem;
+        max-width: 100%;
+      }
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include maxWidth(767px) {
+    padding: 4rem 0;
+
+    &-bottom {
+      padding: 5rem 0 4rem;
+    }
+  }
+}

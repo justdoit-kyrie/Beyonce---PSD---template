@@ -1,0 +1,37 @@
+header.header#header
+	ul.header-menu
+		a(href="#header").header-menu-item Home
+		a(href="#testmonial").header-menu-item Why us?
+		a(href="#features").header-menu-item Features
+		a(href="#footer").header-menu-item Princing
+		a(href="#footer").header-menu-item Contact
+		a(href="").btn.btn--outlined login
+		a(href="").btn.btn--primary.header-actions-btn sign up
+	.container
+		.header-main
+			.header-top
+				a(href="/")
+					img(srcset="./images/logo.png 2x", alt="Logo").header-logo
+				ul.header-nav
+					a(href="#header").header-item Home
+					a(href="#testmonial").header-item Why us?
+					a(href="#features").header-item Features
+					a(href="#footer").header-item Princing
+					a(href="#footer").header-item Contact
+				.header-actions
+					a(href="#").btn.btn--outlined login
+					a(href="#").btn.btn--primary.header-actions-btn sign up
+				.header-toggle 
+					i.fas.fa-bars
+
+			.header-content
+				+blockContent({heading: "AWARD WINNING COMPANY", title: "We Are The Best Digital Markeing", desc: "You need to get positive results when you spend hard earned revenue and time on any marketing effort. Great returns on marketing and promotions."})
+					.header-content-actions
+						a(href="#").btn.btn--primary Get Started
+						a(href="#").header-icon
+							i.fas.fa-play
+						a.header-link(href="#") watch video
+				div
+					img.header-content-hero(srcset="./images/hero.png 2x", alt="Hero pic")
+
+			
